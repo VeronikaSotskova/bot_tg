@@ -214,8 +214,8 @@ def add_row(service, spreadsheetId, sheetTitle, object_data, startCell: tuple = 
     sheet_range = get_a1_notation(sheetTitle, startCell=startCell, endCell=cell_end)
 
     return service.spreadsheets().values().batchUpdate(spreadsheetId=spreadsheetId, body={
-        "valueInputOption": "USER_ENTERED",
         # Данные воспринимаются, как вводимые пользователем (считается значение формул)
+        "valueInputOption": "USER_ENTERED",
         "data": [
             {"range": sheet_range,
              # Сначала заполнять строки, затем столбцы
