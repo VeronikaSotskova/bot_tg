@@ -114,7 +114,7 @@ def callback_worker(call):
                          'https://docs.google.com/spreadsheets/d/' + str(read_table_info()[1]))
 
     elif call.data == "no":
-        pass
+        bot.register_next_step_handler(get_name)
 
 
 def read_temp():
